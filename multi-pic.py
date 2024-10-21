@@ -25,7 +25,7 @@ data_transforms = {
 }
 
 # Load dataset
-DATA_DIR = 'path/to/flower_dataset'
+DATA_DIR = 'CurrentDataSet'
 datasets = {x: datasets.ImageFolder(os.path.join(DATA_DIR, x), data_transforms[x])
             for x in ['train', 'val']}
 dataloaders = {x: DataLoader(datasets[x], batch_size=32, shuffle=True, num_workers=4)
@@ -93,7 +93,7 @@ def train_model(model, criterion, optimizer, num_epochs=10):
 model = train_model(model, criterion, optimizer, num_epochs=10)
 
 # Save the trained model
-torch.save(model.state_dict(), 'flower_classifier.pth')
+torch.save(model.state_dict(), 'flower_classifier1.pth')
 
 # Streamlit interface for web-based classification
 st.title("Flower Classifier: Dandelion vs Daisy")

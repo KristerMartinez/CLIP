@@ -1,0 +1,2 @@
+An example picture from the Flowers_Classification dataset depicting a daisy
+An example picture from the Flowers_Classification dataset depicting a dandelion
