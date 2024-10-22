@@ -208,7 +208,6 @@ sortedcontainers==2.1.0
 soupsieve==2.3.1
 stone==3.3.1
 sympy==1.12
-systemd-python==234
 tables==3.7.0
 tblib==1.7.0
 tensorboard==2.17.0
