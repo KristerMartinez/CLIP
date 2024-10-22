@@ -1,3 +1,16 @@
-Pillow==9.0.1
+# for web app
+streamlit
+streamlit-navigation-bar
+
+#for loading environment variables  #new
+python-dotenv
+
+#for pytorch
 torch==2.3.1
 torchvision==0.18.1
+
+#for PIL
+Pillow==9.0.1
+
+#imports
+numpy
