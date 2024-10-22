@@ -2,11 +2,11 @@ import os
 import torch
 import torch.nn as nn
 import torch.optim as optim
-from torchvision import datasets, models, transforms
+from torchvision.models import resnet18, ResNet18_Weights
+from torchvision import datasets, transforms
 from torch.utils.data import DataLoader
 import streamlit as st
 from PIL import Image
-import numpy as np
 
 # Define transformations for training and validation
 data_transforms = {
@@ -36,7 +36,8 @@ class_names = datasets['train'].classes
 device = torch.device("cuda:0" if torch.cuda.is_available() else "cpu")
 
 # Load pretrained model and modify final layer
-model = models.resnet18(pretrained=True)
+model = resnet18(weights=ResNet18_Weights.IMAGENET1K_V1)
+
 num_ftrs = model.fc.in_features
 model.fc = nn.Linear(num_ftrs, len(class_names))
 model = model.to(device)
