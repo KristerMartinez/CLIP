@@ -1,0 +1,15 @@
+# for web app
+streamlit
+streamlit-navigation-bar
+
+#for loading environment variables  #new
+python-dotenv
+
+#for pytorch
+torch
+
+#for PIL
+Pillow
+
+#imports
+numpy
