@@ -6,10 +6,11 @@ streamlit-navigation-bar
 python-dotenv
 
 #for pytorch
-torch
+torch==2.3.1
+torchvision==0.18.1
 
 #for PIL
-Pillow
+Pillow==9.0.1
 
 #imports
 numpy
