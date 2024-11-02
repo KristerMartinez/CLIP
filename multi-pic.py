@@ -94,14 +94,17 @@ def train_model(model, criterion, optimizer, num_epochs=10):
 model = train_model(model, criterion, optimizer, num_epochs=10)
 
 # Save the trained model
-torch.save(model.state_dict(), 'flower_classifier1.pth')
+torch.save(model.state_dict(), 'flower_classifier.pth')
 
 # Streamlit interface for web-based classification
 st.title("Flower Classifier: Dandelion vs Daisy")
 model.eval()  # Set model to evaluate mode
 
 # Load model
-model.load_state_dict(torch.load('flower_classifier.pth', map_location=device))
+# model.load_state_dict(torch.load('flower_classifier.pth', map_location=device))
+
+# Load model with weights_only=True to avoid the FutureWarning
+model.load_state_dict(torch.load('flower_classifier.pth', map_location=device, weights_only=True))
 
 # Define Streamlit function to classify uploaded images
 def classify_image(image_path):
