@@ -38,7 +38,6 @@ uploaded_file = st.file_uploader("Choose an image of a flower", type=["jpg", "jp
 if uploaded_file is not None:
     # Open and display the image
     image = Image.open(uploaded_file).convert("RGB") # Convert image to RGB to ensure 3 channels
-    st.image(image, caption='Uploaded Image', use_column_width=True)
 
     # Preprocess the image
     input_tensor = data_transforms(image).unsqueeze(0).to(device)
@@ -50,9 +49,10 @@ if uploaded_file is not None:
         _, preds = torch.max(outputs, 1)
         confidence = probabilities[0][preds[0]].item()  # Get the confidence score for the predicted class
 
-    # Display the image
-    st.image(image, caption='Uploaded Image', use_column_width=True)
-
     # Display prediction with confidence percentage
     label = class_names[preds[0]]
     st.write(f"Prediction: {label} ({confidence * 100:.2f}% confidence)")
+
+    # Display the image
+    st.image(image, caption='Uploaded Image', use_column_width=True)
+
