@@ -50,6 +50,9 @@ if uploaded_file is not None:
         _, preds = torch.max(outputs, 1)
         confidence = probabilities[0][preds[0]].item()  # Get the confidence score for the predicted class
 
+    # Display the image
+    st.image(image, caption='Uploaded Image', use_column_width=True)
+
     # Display prediction with confidence percentage
     label = class_names[preds[0]]
     st.write(f"Prediction: {label} ({confidence * 100:.2f}% confidence)")
