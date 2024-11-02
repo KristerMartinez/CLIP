@@ -53,6 +53,6 @@ if uploaded_file is not None:
     label = class_names[preds[0]]
     st.write(f"Prediction: {label} ({confidence * 100:.2f}% confidence)")
 
-    # Display the image
+    # Display the image please 
     st.image(image, caption='Uploaded Image', use_column_width=True)
 
