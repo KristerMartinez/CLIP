@@ -57,7 +57,7 @@ if uploaded_file is not None:
         label = class_names[preds[0]]
         st.write(f"Prediction: {label} ({confidence * 100:.2f}% confidence)")
     else:
-        st.write("The model is not confident that the image is a flower (daisy or dandelion).")
+        st.write(f"The model is not confident that the image with a confidence of) ({confidence * 100:.2f}% is a flower (daisy or dandelion)).")
 
 
     # Display the image please
