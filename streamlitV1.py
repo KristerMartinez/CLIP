@@ -50,9 +50,16 @@ if uploaded_file is not None:
         confidence = probabilities[0][preds[0]].item()  # Get the confidence score for the predicted class
 
     # Display prediction with confidence percentage
-    label = class_names[preds[0]]
-    st.write(f"Prediction: {label} ({confidence * 100:.2f}% confidence)")
+    # label = class_names[preds[0]]
+    # st.write(f"Prediction: {label} ({confidence * 100:.2f}% confidence)")
 
-    # Display the image please 
+    if confidence >= 0.85:
+        label = class_names[preds[0]]
+        st.write(f"Prediction: {label} ({confidence * 100:.2f}% confidence)")
+    else:
+        st.write("The model is not confident that the image is a flower (daisy or dandelion).")
+
+
+    # Display the image please
     st.image(image, caption='Uploaded Image', use_column_width=True)
 
