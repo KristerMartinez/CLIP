@@ -29,7 +29,7 @@ data_transforms = transforms.Compose([
     transforms.Normalize([0.485, 0.456, 0.406], [0.229, 0.224, 0.225])
 ])
 
-# Streamlit interface
+# Streamlit interface v1
 st.title("Flower Classifier: Dandelion vs Daisy")
 
 # File uploader

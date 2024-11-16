@@ -8,7 +8,7 @@ from torch.utils.data import DataLoader
 import streamlit as st
 from PIL import Image
 
-# Define transformations for training and validation
+# Define transformations for training and validation - Fix me !
 data_transforms = {
     'train': transforms.Compose([
         transforms.RandomResizedCrop(224),
